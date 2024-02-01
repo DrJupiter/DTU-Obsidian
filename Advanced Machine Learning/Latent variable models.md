@@ -51,3 +51,34 @@ And we can't calculate the distribution over (x|z) easily.
 ![[Pasted image 20240201110626.png]]
 
 or maybe we can
+
+I practice, we learn the parameters for the distribution, we are going to sample from with our model $\phi$.
+
+#### Issues with VAE
+
+![[Pasted image 20240201145003.png]]
+
+If this happens it is an issue, because our distribution $q$ is essentially useless, and we might as well have used a latent variable model.
+This the stochastic variables $z$ and $x$ are independent.
+
+![[Pasted image 20240201145326.png]]
+
+![[Pasted image 20240201145407.png]]
+
+_the same thing can happen to GANS_.
+
+#### Fixes for issues
+
+![[Pasted image 20240201145759.png]]
+
+The function $\mathbb{H}$ is the entropy.
+
+![[Pasted image 20240201150020.png]]
+
+![[Pasted image 20240201150243.png]]
+
+Another way to get a more flexible prior:
+
+![[Pasted image 20240201150403.png]]
+
+![[Pasted image 20240201150650.png]]
