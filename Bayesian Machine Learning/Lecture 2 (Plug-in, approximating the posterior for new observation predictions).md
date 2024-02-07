@@ -53,9 +53,8 @@ We evaluate the posterior or joint distribution at these grid points.
 
 ![[Pasted image 20240205101340.png]]
 
-This means ?$q(\theta) = \pi_i \cdot \theta$?
+__Note we would only use Dirac delta distribution in integrals__
 
-!!!Question how does this distribution not blow up, ask teacher or TA!!!
 ### Moments
 
 ![[Pasted image 20240205101659.png]]
