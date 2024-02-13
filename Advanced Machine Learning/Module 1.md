@@ -1,5 +1,4 @@
 
-
 ### Generative models
 
 Here is a comparison of the following
