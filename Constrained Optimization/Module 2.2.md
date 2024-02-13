@@ -1,6 +1,10 @@
 
 ## Sensitivity
 
+
+
+__IS LITERALLY JUST THE GRADIENT OF THE LOSS W.R.T THE PARAMETERS OF INTEREST, WE CAN THEN TAKE THE NORM IF WE WANT A CONCRETE NUMBER__
+
 The Lagrange multiplier ,$\lambda$, in 
 
 ![[Pasted image 20240213102455.png]]
@@ -26,6 +30,8 @@ The book argues
 
 
 ![[Pasted image 20240213134107.png]]
+
+For Equality constrains, the parameters are unconstrained.
 ## The active set method for QPs
 
 ![[Pasted image 20240213104837.png]]
