@@ -70,6 +70,9 @@ Let's approximate
 
 ![[Pasted image 20240219122115.png]]
 
+![[Pasted image 20240304113407.png]]
+
+
 A slightly better approximation?
 
 ![[Pasted image 20240219121744.png]]
