@@ -55,3 +55,18 @@ We want to use non-blocking code, and thus async's inner framework which builds 
 The execution time of the whole task before the improvement of the resources of the system is denoted as `T`.
 
 
+He calss F the parallel fraction, it is p in the other definition.
+
+### Example
+
+
+![[Pasted image 20240306091148.png]]
+
+
+Here F = (100/(100+20)), so sum of all paralizable tasks divided by sum of all tasks.
+
+We can then insert this into formula S(4), S($\infty$), to get the theoretical speed ups.
+
+Finally in d we consider the speed up of S(num p) vs 5 sec and see it is more worth to get the 5 seconds.
+
+
