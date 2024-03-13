@@ -24,9 +24,14 @@ def problem1(n, mu_bar, d0):
 
 if __name__ == "__main__":
     P,q, A, b = problem1(5, 1, 1)
-
+    #  Lagrange
+    phi = lambda x: 0.5*x.T @ P @ x + q.T @ x
+    g = lambda x: A @ x - b
+    lagrange = lambda x, l: phi(x) + l.T @ g(x)
+    # We must get the hessian of the lagrange function and show it is positive definite (sufficient)
+    # At the point for which we have a local minima (neccesary) 
     print(A)
-
+from langchain_community.llms import VLLM
 
 
     
