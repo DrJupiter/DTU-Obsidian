@@ -46,6 +46,8 @@ In this example the mul is not a kernel, but a gpu functions <I suppose)
 We can actually have threads have more than one element, it depends on the computation you are doing.
 
 We must pass the input and output array to the kernel. We our built up around indexing.
+
+We need to synchronize our kernels to ensure the GPU computation is done `cuda.synchronize()` in Numba. 
 #### The thread block/compute block
 
 ![[Pasted image 20240403085647.png]]
