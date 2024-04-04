@@ -47,6 +47,10 @@ __closeness centrality__ which measures the average shortest path length between
 
 ![[Pasted image 20240404095607.png]]
 
+Intuition behind the adjacency matrix is the same as a stochastic (markov chain) matrix. Raising it to a power is and looking at an index gives us the number of ways to end back up at the given node if we took the number of steps equal to the power we raised the matrix to.
+
+% idea, implement a switch given the time steps which is active for as long as the pixels are independent in the unet.
+
 ### Graph Features
 
 
