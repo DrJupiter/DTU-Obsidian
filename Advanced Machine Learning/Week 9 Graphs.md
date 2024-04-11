@@ -54,4 +54,35 @@ Intuition behind the adjacency matrix is the same as a stochastic (markov chain)
 ### Graph Features
 
 
+# Encoder + Decoder Setup for Graphs
+## (Encoder) Learning Node Embeddings
+
+We want node embeddings to do the following:
+
+- Contain where they are in the graph
+- Geometric relations between embeddings should reveal relations between the corresponding nodes in the graph i.e edges.
+
+The type of embedding we will focus on first is the shallow embedding
+
+### Shallow Embedding
+
+Each node is a key which looks up into a table of embeddings.
+![[Pasted image 20240411085049.png]]
+
+## (Decoder) The pairwise decoder
+
+The pairwise decoder predicts a relation between two nodes.
+This could be if an edge exists or something else.
+
+![[Pasted image 20240411091532.png]]
+![[Pasted image 20240411091545.png]]
+
+### Architectures and what they achieve
+
+![[Pasted image 20240411104903.png]]
+![[Pasted image 20240411104920.png]]
+
+A is the adjacency matrix.
+$p_G(v|u)$ is the probability of visiting node v on a random walk of fixed length from node u.
+
 
