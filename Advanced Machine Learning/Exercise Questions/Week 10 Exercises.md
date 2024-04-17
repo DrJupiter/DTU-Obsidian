@@ -1,4 +1,5 @@
 
+
 ![[Pasted image 20240411144718.png]]
 
 ![[Pasted image 20240411150451.png]]
@@ -18,6 +19,6 @@ Following the power iteration rule the vector we will end up with is the eigenve
 ![[Pasted image 20240411150840.png]]
 
 ![[Pasted image 20240411151228.png]]
-
-$$5 \cdot (10 \cdot (32 + 32) + 32) = 3360$$
-
+My mistake was not including the full number parameters of the weight matrices in the drawing.
+$$5 \cdot (10 \cdot (32 \cdot 32 + 32 \cdot 32) + 32) = 102560$$
+Here I assume k yields unique parameters, I assume each node has a unique neighbor matrix too.
