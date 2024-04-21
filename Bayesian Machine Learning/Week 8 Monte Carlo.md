@@ -146,3 +146,48 @@ __in this course we assume we have it as a given that we can sample from distrib
 
 Markov methods extended to methods which aren't i.i.d.
 
+These chains all have the markov property i.e the history only matters from our most recent point when predicting future points in the chain.
+
+> This will help us in our sampling of points from distributions
+
+__Example__
+
+![[Pasted image 20240421131242.png]]
+
+_the above situation is homogenous as the variance $e_k$ doesn't depend on k_
+
+if the transition kernel doesn't depend on time/ an index set we say it is homogenous w.r.t that set.
+
+### Design philosophy - invariant/stationary distributions for $p(z_t)$
+
+We can calculate distributions over our variable over time with the sum rule
+
+$$p(z_{t+1}) = \int p(z_{t+1}|z_t) p(z_t) d z_t$$
+
+We want this result to be constant/have the same form of distribution independent of the index set.
+If we meet this property we have an invariant/stationary distribution.
+
+## The metropolis algorithm
+
+We want to sample from a distribution $p(\theta)$, we have access to a symmetric distribution $q(\theta*|\theta^{k-1})$.
+
+The algorithm works by
+
+loop over some amount K given an initial parameter value $\theta_0$.
+
+given the last value $\theta_{k-1}$ generate a sample from $\theta* \sim q(\theta*|\theta_{k-1})$.
+
+compute a threshhold/acceptance probability $A_k$
+
+$$ A_k = \min \left(1, \frac{p(\theta*)}{p(\theta_{k-1})}\right)$$
+
+Sample from a uniform distribution $u_k \sim \mathcal{U}(0,1)$ and define the new parameter $\theta_k$ as follows
+
+$$\theta_k = \begin{cases} \theta* \text{ if } u_k < A_k \\ \theta_{k-1} \end{cases}$$
+
+As we are just evaluating the ratio to get our threshhold, this aids us as we just need to know our target density p up to a constant. An example of this is the posterior distribution:
+
+![[Pasted image 20240421135247.png]]
+
+so in essence, we are saying does our new sample have around the sameish density or greater of our target, if we are less dense then don't go there and if we are more dense go there, so this will lead us to higher density areas. This could be expanded with other terms to get a more wholesitic sample procedure.
+
