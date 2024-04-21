@@ -167,7 +167,9 @@ $$p(z_{t+1}) = \int p(z_{t+1}|z_t) p(z_t) d z_t$$
 We want this result to be constant/have the same form of distribution independent of the index set.
 If we meet this property we have an invariant/stationary distribution.
 
-## The metropolis algorithm
+We also want a limiting distribution in the sense that eventually our chain hits the target distribution as time goes towards some N, this N can be infinity.
+
+## The metropolis and metropolis hastings algorithm
 
 We want to sample from a distribution $p(\theta)$, we have access to a symmetric distribution $q(\theta*|\theta^{k-1})$.
 
@@ -190,4 +192,31 @@ As we are just evaluating the ratio to get our threshhold, this aids us as we ju
 ![[Pasted image 20240421135247.png]]
 
 so in essence, we are saying does our new sample have around the sameish density or greater of our target, if we are less dense then don't go there and if we are more dense go there, so this will lead us to higher density areas. This could be expanded with other terms to get a more wholesitic sample procedure.
+
+The hasting part is to add an additional conditional
+
+
+![[Pasted image 20240421145921.png]]
+
+this allows us to use a non symmetric q.
+
+The samples from a metropolis algorithm follow the markov property.
+
+The transition kernel for the metropolis hasting algorithm is
+
+![[Pasted image 20240421150504.png]]
+
+> As the metropolis hasting is also a markov chain
+
+As we don't want our initial value to influence where we end up, we determain some amount of warmup steps and discard them after having sampled for some time
+
+![[Pasted image 20240421150708.png]]
+
+## Ergodicty of MC
+
+![[Pasted image 20240421150946.png]]
+
+This can sometimes be hard to check, instead, we check for eigendistributions/detailed balance conditions
+
+![[Pasted image 20240421151024.png]]
 
