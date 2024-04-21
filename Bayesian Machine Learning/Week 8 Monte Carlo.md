@@ -98,3 +98,51 @@ We will be sampling from $q(z)$ _(this is a lot like the Laplacian approximation
 
 What we will do is sample z from q, then sample a uniform variable over the interval $u \sim \mathcal{U}[0, K \cdot q(z)]$, then evaluate if $u > \tilde p (z)$, if this is the case reject the sample, otherwise keep the sample z.
 
+Con: In higher than a few dimensions, we will reject most things, but in 1d and 2d it works well.
+
+## Importance sampling
+
+We want to approximate an expectation over some complex distribution p.
+We have access to an approximate distribution $q$ which is easier to evaluate.
+
+We can rewrite our expectation as
+
+$$ E_p[f(z)] = \int f(z)p(z)dz = \int f(z) \frac{q(z)}{q(z)} p(z) dz = E_q[f(z)\frac{p(z)}{q(z)}] $$
+We can then approximate this via monte carlo integral approximation as
+
+	$$ E_p[f(z)] \approx \hat f =  \frac{1}{S} \sum_{i=1}^S f(z_i) \frac{p(z_i)}{q(z_i)}, z_i \sim q(z)$$
+The ratio between p and q is called _importance weights_.
+
+$$ w_i = \frac{p(z_i)}{q(z_i)} $$
+_q could be a laplace approximation._
+
+the variance of this estimator is 
+
+$$ \hat \sigma_q^2 = \frac{1}{S} \sum_{i=1}^S (w_i f(z_i) - \hat f)^2 $$
+
+# Generating random numbers
+
+Assume we can sample from a uniform distribution, $u \sim \mathcal{U}[0,1]$.
+
+## Bernoulli
+
+![[Pasted image 20240421113144.png]]
+
+## Standard normal distribution
+
+![[Pasted image 20240421113208.png]]
+
+### Scale and change the location
+
+![[Pasted image 20240421113226.png]]
+
+## Exponential distribution
+
+![[Pasted image 20240421113248.png]]
+
+__in this course we assume we have it as a given that we can sample from distributions.__
+
+# Markov Chain Monte Carlo methods
+
+Markov methods extended to methods which aren't i.i.d.
+
