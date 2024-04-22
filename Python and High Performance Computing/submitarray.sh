@@ -1,6 +1,6 @@
 #!bin/bash
 #BSUB -q hpc
-#BSUB -J HPCPYTHON[1-10] 
+#BSUB -J HPCPYTHON[2,29,71,73,127] 
 #BSUB -n 1
 #BSUB -W 3 
 #BSUB -gpu "num=1:mode=exclusive_process"
@@ -12,9 +12,6 @@
 #BSUB -o %J_%I.out
 #BSUB -e %J_%.out
 
-source /dtu/projects/02613_2024/conda/conda_init.sh
-conda activate 02613
-
-time python3 week9gpu.py
+echo "hi job" $LSB_JOBINDEX
 
 #Reduction full
