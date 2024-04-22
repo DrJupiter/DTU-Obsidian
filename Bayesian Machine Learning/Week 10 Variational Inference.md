@@ -123,4 +123,42 @@ Mixture models are important in unsupervised learning ex clustering.
 
 
 	$$p(x) = \sum_{k=1}^K \pi_{k}N(x|\mu_{k},\Sigma_{k}), \sum_{k=1}^K \pi_{k} =1, \pi_{k} \in [0,1] $$
-	
+
+### Example cluster assignment
+
+We introduce a binary one-hot encoded latent variable z
+
+We write
+
+$$ p(x_{n}|z_{n}) = \Pi_{k=1}^K N(x_{n}|\mu_{k},\Sigma_{k})^{z_{nk}}$$
+and the distribution / prior over z is
+
+$$p(z_{n}) = \mathtt{Categorical}(z_{n}|\pi) = \Pi_{k=1}^K \pi_{k}^{z_{n}}$$
+
+Our other priors are the following
+
+![[Pasted image 20240422140000.png]]
+
+$\Lambda^{-1} = \Sigma$
+
+We use a factorized variational inference model with a CAVI setup
+
+![[Pasted image 20240422141310.png]]
+
+
+
+# Direchlet Distribution
+
+An extension of the beta distribution to more than two outcomes.
+
+![[Pasted image 20240422140606.png]]
+
+
+# Wishart Distribution - The multivariate gamma
+
+![[Pasted image 20240422141036.png]]
+
+
+
+
+
