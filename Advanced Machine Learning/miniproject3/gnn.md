@@ -39,3 +39,10 @@ Graph statistics:
 			 eigenvector centrality
 
 
+## Our model
+
+Embedding: Graph level
+Loss: Binary Cross entropy
+
+Encoder: Gaussian prior
+Decoder: tensor product
