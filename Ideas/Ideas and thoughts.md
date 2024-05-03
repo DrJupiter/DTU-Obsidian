@@ -5,3 +5,4 @@
 
 # For monte carlo loss, why don't we accumulate the sum and at the same time check the variance if it is below some threshold and then accumulate some more if it is not and otherwise do the update step to reduce the noise in our gradient.
 
+# Relabling via model to produce labels and other model to standardize these labels
