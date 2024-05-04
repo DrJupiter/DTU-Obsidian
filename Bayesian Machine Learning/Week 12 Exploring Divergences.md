@@ -68,3 +68,65 @@ Usually we can also just calculate the gradients through this.
 Thus will be valid from Leibniz' rule for measureable functions assuming we use functions which meet the conditions below:
 
 ![[Pasted image 20240503112728.png]]
+
+Thus we can approximate the gradient of the integral as the integral of the gradient, which helps us with approximating it in the sum form.
+
+We have thus arrived at
+
+$$ \nabla_{\theta} \mathbb{E}_{q_{\theta}}[\log ( p(y,w))] = \nabla_{\theta}\int q_{\theta}(w) \log p(y,w) d w = \int\nabla_{\theta} q_{\theta}(w) \log p(y,w) d w$$ 
+Instead of sampling the gradient from the montecarlo estimator, we are instered in sampling the gradient directly, however the gradient of the distribution is not sampling we can sample directly as it is not a distribution. We will tackle this now
+
+In the following derivation we see that the gradient of any distribution of the setup can be sampled like this:
+
+![[Pasted image 20240503152154.png]]
+
+![[Pasted image 20240503152302.png]]
+
+A down side of this estimator is that it usually has a high variance, thus yielding a harder optimization problem.
+
+but also the log p could have been any function or distribution (obvously independent of the parameters.)
+
+### Example for a mean field Gaussian
+
+A mean field gaussian has a diagonal covariance.
+
+We initialize with some parameters.
+
+Then we sample the gradient at these parameters and update them in an SGD fassion.
+
+We then continue to loop like this until we decide we are done/have converged.
+
+!Note in his slide here there is no reason to actually waste computation on calculating the loss, rather just calculate the gradient estimate:
+
+![[Pasted image 20240504161815.png]]
+
+And then calculate the loss occasionally.
+
+![[Pasted image 20240504162703.png]]
+
+The student t distribution is better here, because we avoid outliers more.
+
+## Ways to make stochastic optimization better
+
+![[Pasted image 20240504163006.png]]
+
+![[Pasted image 20240504163017.png]]
+
+## Reparameterization for more robust optimization/lower variance
+
+For normal distributions, we can sample from a standard normal and then shift them by our parameters to sample a normal distribution, this is more stable than sampling directly and then estimating the gradient.
+
+![[Pasted image 20240504163127.png]]
+
+We can also re-parameterize other distributions
+
+![[Pasted image 20240504163254.png]]
+
+The idea is that we put our parameters into the expectation of the function, we are trying to approximate.
+
+## Mini batching for scaling to large datasets
+
+![[Pasted image 20240504164119.png]]
+
+Sample the dataset and then rescale the sample if you can assume the blocks of your data are i.i.d.
+
