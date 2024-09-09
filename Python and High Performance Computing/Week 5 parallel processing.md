@@ -32,7 +32,7 @@ We then continuously loop over the event loop and listen for pings.
 
 **Coroutines** are [computer program](https://en.wikipedia.org/wiki/Computer_program "Computer program") components that allow execution to be suspended and resumed, generalizing [subroutines](https://en.wikipedia.org/wiki/Subroutine "Subroutine") for [cooperative multitasking](https://en.wikipedia.org/wiki/Non-preemptive_multitasking "Non-preemptive multitasking"). Coroutines are well-suited for implementing familiar program components such as [cooperative tasks](https://en.wikipedia.org/wiki/Cooperative_multitasking "Cooperative multitasking"), [exceptions](https://en.wikipedia.org/wiki/Exception_handling "Exception handling"), [event loops](https://en.wikipedia.org/wiki/Event_loop "Event loop"), [iterators](https://en.wikipedia.org/wiki/Iterator "Iterator"), [infinite lists](https://en.wikipedia.org/wiki/Lazy_evaluation "Lazy evaluation") and [pipes](https://en.wikipedia.org/wiki/Pipeline_(software) "Pipeline (software)").
 
-They have been described as "functions whose execution you can pause".[[1]](https://en.wikipedia.org/wiki/Coroutine#cite_note-1)
+They have been described as "functions whose execution you can pause".[[1 Fundamentals of vector spaces over a field]](https://en.wikipedia.org/wiki/Coroutine#cite_note-1)
 
 ![[Pasted image 20240228093752.png]]
 ![[Pasted image 20240228093804.png]]
