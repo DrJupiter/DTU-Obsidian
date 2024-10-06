@@ -4,7 +4,7 @@
 We have two factors at a and b discrete levels and we want to measure their effect and their interactive effect.
 
 ## Anova analysis for 2 factors at different levels a and b
-
+[2k2]
 
 The F statistics in the table test if the effect from any row is 0.
 

@@ -11,4 +11,9 @@ At home car charging:
 - Receive conformation for charging
 - The car locks the charger cable
 
+### Key improvements
+
+- Show where the user is on the map
+- Show costs through the whole process.
+
 
