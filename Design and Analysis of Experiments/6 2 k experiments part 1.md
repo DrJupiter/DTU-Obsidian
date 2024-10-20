@@ -60,3 +60,51 @@ For to factor design
 
 
 
+## The general case
+
+
+We have A .. K factors we measure.
+We then calculate the contrast of any combination of them following this equation:
+
+![[Pasted image 20241007135141.png]]
+- Things have a -1 if they are in the factors we look at and a +1 if not
+>![[Pasted image 20241007135237.png]]
+
+We can then find the SS for any combination via
+
+![[Pasted image 20241007135300.png]]
+
+If we are given an effect, we first divide by $\frac{2}{n2^k}$ and then square the contrast and then multiply by $\frac{1}{n2^k}$.
+
+
+We then calculate the statistic:
+
+$$F_{0} = \frac{MS_{FACTORS}}{MS_{ERROR}}$$
+
+# Exam questions
+
+
+
+![[Pasted image 20241007135937.png]]
+
+$$ n= 3, k=3$$
+![[Pasted image 20241007135959.png]]
+
+Here we need to get the SS_ERROR so we can calculate the F0 statistics.
+
+We know the total, so we calculate all the individual sum of squared erros and subtract them to get the error.
+
+We know 
+![[Pasted image 20241007135300.png]]
+
+Thus
+
+![[Pasted image 20241007140754.png]]
+
+![[Pasted image 20241007141125.png]]
+
+
+We then get the F0 statistics
+
+![[Pasted image 20241007141309.png]]
+

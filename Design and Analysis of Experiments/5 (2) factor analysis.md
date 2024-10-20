@@ -48,3 +48,23 @@ Sum all the degrees of freedom from the model that have not been included in the
 Example not including the interaction between two elements, would result in the lack of fit degrees of freedom being the degrees of freedom of that interaction.
 
 ! Although only when we have concluded a part of the model is non significant can we add it to the error !
+
+
+# 3 factor case
+
+![[Pasted image 20241007135729.png]]
+
+# Regression parameters from effects
+
+Regression parameter = $effect_i/(high_i - low_i)$
+# Creating a design matrix 
+
+![[Pasted image 20241007152219.png]]
+
+Here if we had concrete values we'd input the high and low values instead of minus one and 1.
+We can then use these with 
+
+![[Pasted image 20241007152344.png]]
+
+To get the regression parameters
+
